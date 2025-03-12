@@ -85,7 +85,6 @@ export default function BirthdayCard() {
 
       {/* Main content container - centered */}
       <div className="flex flex-col items-center justify-center w-full max-w-md mx-auto">
-        {/* Birthday text */}
         <h1
           className="text-4xl md:text-5xl font-bold text-center mb-12 text-black"
           style={{ fontFamily: "'Quicksand', sans-serif" }}
@@ -93,7 +92,7 @@ export default function BirthdayCard() {
           Happy Birthday Baby!!
         </h1>
 
-        {/* Cake and plate container - centered */}
+        {/* Cake and plate container */}
         <div className="relative w-full h-80 flex items-center justify-center mb-8">
           {/* Plate */}
           <motion.div
@@ -113,16 +112,16 @@ export default function BirthdayCard() {
             animate={{ scale: 1 }}
             transition={{ type: "spring", damping: 12, delay: 0.3 }}
           >
-            {/* Bottom layer */}
-            <div className="relative h-24 bg-pink-200 rounded-2xl overflow-hidden">
+            {/* Bottom layer (now smaller) */}
+            <div className="relative h-20 bg-pink-200 rounded-2xl overflow-hidden">
               {/* Polka dots */}
-              {Array.from({ length: 12 }).map((_, i) => (
+              {Array.from({ length: 9 }).map((_, i) => (
                 <div
                   key={`bottom-${i}`}
-                  className="absolute w-4 h-4 rounded-full bg-pink-300"
+                  className="absolute w-3 h-3 rounded-full bg-pink-300"
                   style={{
-                    left: `${(i % 4) * 30 + 10}%`,
-                    top: `${Math.floor(i / 4) * 30 + 10}%`,
+                    left: `${(i % 3) * 35 + 15}%`,
+                    top: `${Math.floor(i / 3) * 35 + 15}%`,
                   }}
                 />
               ))}
@@ -130,16 +129,16 @@ export default function BirthdayCard() {
               <div className="absolute -top-2 left-0 w-full h-4 bg-white rounded-t-xl"></div>
             </div>
 
-            {/* Top layer - centered directly above bottom layer */}
-            <div className="relative h-20 w-[80%] mx-auto -mt-4 bg-pink-200 rounded-2xl overflow-hidden z-20">
+            {/* Top layer (now larger) */}
+            <div className="relative h-24 w-[125%] -ml-[12.5%] -mt-4 bg-pink-200 rounded-2xl overflow-hidden z-20">
               {/* Polka dots */}
-              {Array.from({ length: 9 }).map((_, i) => (
+              {Array.from({ length: 12 }).map((_, i) => (
                 <div
                   key={`top-${i}`}
-                  className="absolute w-3 h-3 rounded-full bg-pink-300"
+                  className="absolute w-4 h-4 rounded-full bg-pink-300"
                   style={{
-                    left: `${(i % 3) * 35 + 15}%`,
-                    top: `${Math.floor(i / 3) * 35 + 15}%`,
+                    left: `${(i % 4) * 30 + 10}%`,
+                    top: `${Math.floor(i / 4) * 30 + 10}%`,
                   }}
                 />
               ))}
@@ -148,12 +147,12 @@ export default function BirthdayCard() {
             </div>
 
             {/* Top frosting */}
-            <div className="relative w-[80%] mx-auto z-30">
+            <div className="relative w-[125%] -ml-[12.5%] z-30">
               <div className="absolute -top-4 left-0 w-full h-6 bg-white rounded-t-xl"></div>
             </div>
 
             {/* Candles */}
-            <div className="absolute -top-16 left-0 w-full flex justify-center gap-6 z-40">
+            <div className="absolute -top-12 left-0 w-full flex justify-center gap-6 z-40">
               {[0, 1, 2].map((i) => (
                 <div key={i} className="relative">
                   {/* Candle body */}
